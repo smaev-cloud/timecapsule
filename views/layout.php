@@ -81,9 +81,9 @@ $navLink = function (string $key, string $href, string $label) use ($nav): strin
 
 <footer class="site-footer">
   <div class="container">
-    <p>LR3</p>
+    <p>LR4</p>
     <?php /* Shows which machine answered, which database host it uses and where files are stored. */ ?>
-    Served by <code><?= e(gethostname()) ?></code> · DB: <code><?= e(config('DB_HOST', 'localhost')) ?></code> · Files: <code>local disk (<?= e(config('UPLOAD_DIR', 'storage/uploads')) ?>)</code>
+    Served by <code><?= e(gethostname()) ?></code> · DB: <code><?= e(config('DB_HOST', 'localhost')) ?></code> · Files: <code>S3 (<?= e($_ENV['S3_BUCKET'] ?? config('S3_BUCKET', 'timecapsule-dev-uploads-k1tetsssu')) ?>)</code>
   </div>
 </footer>
 
